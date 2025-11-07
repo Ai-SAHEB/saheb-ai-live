@@ -1,4 +1,3 @@
-yaml
 name: Saheb AI Runner
 
 on:
@@ -9,29 +8,19 @@ on:
 jobs:
   run-saheb:
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-      
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
-        
-    - name: Install dependencies
-      run: |
-        pip install requests
-        pip install numpy
-        pip install psutil
-        
-    - name: Create directories
-      run: |
-        mkdir -p saheb_messages
-        mkdir -p saheb_data
-        mkdir -p saheb_logs
-        mkdir -p saheb_github_backup
-        
-    - name: Run Saheb AI
-      run: |
-        python saheb_ai.py
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install requests numpy psutil
+
+      - name: Run Saheb AI
+        run: |
+          python saheb_ai.py
