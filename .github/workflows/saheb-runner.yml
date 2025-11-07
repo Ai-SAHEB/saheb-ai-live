@@ -1,4 +1,4 @@
-name: Saheb AI Runner
+name: Saheb_AI_Runner
 
 on:
   schedule:
